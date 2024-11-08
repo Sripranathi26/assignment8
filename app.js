@@ -6,7 +6,7 @@ const app = express();
 app.use(express.urlencoded({ extended: true }));
 app.use('/events', eventRoutes);
 
-mongoose.connect('mongodb://localhost:27017/event-management', {
+mongoose.connect('mongodb+srv://ass_8:<db_password>@cluster0.yma9f.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0', {
   useNewUrlParser: true,
   useUnifiedTopology: true,
 }).then(() => console.log('Connected to MongoDB'));
