@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Event Management</title>
+</head>
+<body>
+  <h1>Events</h1>
+  <a href="/events/create">Create New Event</a>
+  <ul>
+    <% events.forEach(event => { %>
+      <li>
+        <h2><%= event.title %></h2>
+        <p><%= event.description %></p>
+        <p>Date: <%= event.date.toDateString() %></p>
+        <p>Location: <%= event.location %></p>
+        <form action="/events/update/<%= event._id %>" method="POST">
+          <button type="submit">Edit</button>
+        </form>
+        <form action="/events/delete/<%= event._id %>" method="POST">
+          <button type="submit">Delete</button>
+        </form>
+      </li>
+    <% }); %>
+  </ul>
+</body>
+</html>
